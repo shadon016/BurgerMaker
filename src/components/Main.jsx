@@ -71,8 +71,8 @@ const Main = () => {
                         <div className='w-48 flex rounded-md py-3 ml-12'>
                             <div className=''>
                                 <p className='ml-5 text-lg underline font-semibold font-sans dark:text-slate-200'>Items</p>
-                                <button className='btn md:block hover:bg-black' onClick={() => addItem(chicken, "chicken", Number(20))}>chicken</button>
-                                <button className='btn hover:bg-black md:block' onClick={() => addItem(beef, "beef", Number(50))}>beef</button>
+                                <button className='btn md:block hover:bg-black' onClick={() => addItem(chicken, "chicken", Number(70))}>chicken</button>
+                                <button className='btn hover:bg-black md:block' onClick={() => addItem(beef, "beef", Number(90))}>beef</button>
                                 <button className='btn hover:bg-black md:block' onClick={() => addItem(cheese, "cheese", Number(25))}>cheese</button>
                                 <button className='btn hover:bg-black md:block' onClick={() => addItem(sauces, "sauce", Number(10))}>sauce</button>
                             </div>
