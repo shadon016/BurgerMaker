@@ -1,23 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from 'react';
+import Main from "./components/Main";
+import Nav from "./components/Nav";
+import Footer from "./components/Footer";
+
 
 function App() {
+  const [Theme, setTheme] = useState("light");
+
+  useEffect(() => {
+    if (Theme === "dark") {
+      document.documentElement.classList.add('dark')
+    }
+    else {
+      document.documentElement.classList.remove('dark')
+    }
+  }, [Theme])
+
+  const ThemeSwitcher = () => {
+    setTheme(
+      Theme === "dark" ? "light" : "dark"
+    );
+  }
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="dark:bg-slate-700 h-screen md:h-screen lg:h-screen brightness-120 ">
+      <Nav Theme={Theme} setTheme={setTheme} ThemeSwitcher={ThemeSwitcher} />
+      <Main />
+      <Footer />
     </div>
   );
 }
